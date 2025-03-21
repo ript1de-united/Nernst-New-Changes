@@ -73,7 +73,7 @@ class FCBatSysODEGroup(om.Group):
         self.add_constraint('con_fcsys_3', upper=0,scaler=1e-3)
 
         self.add_subsystem('fuel_cell_system_module_properties', FCSysModulePropertiesComp(num_nodes=nn),
-                           promotes_inputs=[ 'pwr_aircmprsr_maxfcstack', 'pwr_dens_fcstack','pwr_el_maxfcstack'], #changes made here 
+                           promotes_inputs=[ 'pwr_aircmprsr_maxfcstack', 'pwr_dens_fcstack','pwr_el_maxfcstack', 'pwr_el_del_per_maxfcsysmodule'], #changes made here
                            promotes_outputs=['mass_per_fcsysmodule'])
 
         self.add_subsystem('fuel_cell_system_properties', FCSysPropertiesComp(num_nodes=nn),
